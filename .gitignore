@@ -97,14 +97,6 @@ yarn.lock
 dist/
 build/
 
-# React specific
-client/node_modules/
-client/build/
-client/.env.local
-client/.env.development.local
-client/.env.test.local
-client/.env.production.local
-
 # VS Code
 .vscode/*
 !.vscode/settings.json
@@ -123,3 +115,22 @@ client/.env.production.local
 # Local History
 .history/
 .vshistory/
+
+# React (frontend code inside Companyplanner/frontend-code/client)
+Companyplanner/frontend-code/client/node_modules/
+Companyplanner/frontend-code/client/build/
+Companyplanner/frontend-code/client/.env.local
+Companyplanner/frontend-code/client/.env.development.local
+Companyplanner/frontend-code/client/.env.test.local
+Companyplanner/frontend-code/client/.env.production.local
+
+# Don’t ignore the actual React source code
+!Companyplanner/frontend-code/client/*
+!Companyplanner/frontend-code/client/**
+
+# Still ignore dependency and cache folders globally
+node_modules/
+build/
+dist/
+.cache/
+.parcel-cache/

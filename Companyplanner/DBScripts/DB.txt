@@ -1,0 +1,20 @@
+CREATE TABLE Customers (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE CustomerImages (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerId INT NOT NULL,
+    ImageBase64 NVARCHAR(MAX) NOT NULL,
+    CreatedAt DATETIME NOT NULL DEFAULT GETUTCDATE(),
+
+    CONSTRAINT FK_CustomerImages_Customers
+        FOREIGN KEY (CustomerId) REFERENCES Customers(Id)
+        ON DELETE CASCADE
+);
+
+
+INSERT INTO Customers (Name)
+VALUES (N'CompanyPlanner');
